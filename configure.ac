@@ -24,7 +24,7 @@ OPTION_DOC
 OPTION_DEFAULT_DISABLE([debug], [ENABLE_DEBUG])
 OPTION_DEFAULT_ENABLE([python], [ENABLE_PYTHON])
 
-if ENABLE_PYTHON
+if test -z "$ENABLE_PYTHON_TRUE"
 then
   AM_PATH_PYTHON(,,[:])
   NUMPY_INCLUDE_PATH=$($PYTHON -c "import numpy; print(numpy.get_include())")
